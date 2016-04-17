@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://code.angularjs.org/1.4.8/angular.min.js"</script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-route.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
+ <script src="//d3js.org/d3.v3.min.js"></script>
+ <script src="angular.js"></script>
+<script src="angular-animate.js"></script>
+<script src="controller1.js"></script>
+<link rel="stylesheet" href="table.css">
+
+<head>
+  <meta charset="UTF-8">
+  <title>MY APP</title>
+</head>
+<body>
+
+
+	<!-- May Node and Express be with you. -->
+	
+	<div ng-app="myApp" ng-controller="appController">
+		<div align="center">
+			<b>Famous Quotes</b>
+			<button ng-click = "submit()">Submit</button>
+			<table ng-show = "tblShow" value="false">
+				<tr>
+					<td>No.</td>
+					<td>Name</td>
+					<td>Quote</td>
+				</tr>
+				
+				  <tr class="animated-row" ng-repeat="x in fmsQuotes  | limitTo:20">
+					<td class="animated-child">{{ x.id }}</td>
+					<td class="animated-child">{{ x.name }}</td>
+					<td class="animated-child">{{ x.quote}}</td>
+					</div>
+				</tr> 
+				
+			</table>
+		</div>
+	</div>
+</body>
+</html>
