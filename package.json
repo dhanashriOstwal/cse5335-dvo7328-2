@@ -19,16 +19,5 @@
   "devDependencies": {
     "nodemon": "^1.9.1"
   }
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/heroku/cse5335-dvo7328-2"
-  },
   
- 
-  "keywords": [
-    "node",
-    "heroku",
-    "express"
-  ],
-  "license": "MIT"
 }
