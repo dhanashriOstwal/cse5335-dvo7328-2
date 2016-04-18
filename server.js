@@ -15,7 +15,7 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
-MongoClient.connect('mongodb://dan:dan@ds019980.mlab.com:19980/quotesdb', (err, database) => {
+MongoClient.connect(PROD_MONGODB, (err, database) => {
 
 	if (err) return console.log(err)
 	db = database;
