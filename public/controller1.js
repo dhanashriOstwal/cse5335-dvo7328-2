@@ -36,8 +36,12 @@ app.controller('appController', function($scope,$http){
 				});
 				
 				i++;
+				if(i>103)
+				{
+					clearInterval(interval);
+				}
 		},500)
-		//clearInterval(interval);
+		
 	}
 })
 
