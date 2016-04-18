@@ -33,7 +33,7 @@ app.post('/quotes', function (req, res) {
 	console.log(req.body.id);  
 	var n = req.body.id;    
  	res.setHeader('Content-Type', 'application/json');  
-	db.collection('quotes').find({'id':n}).toArray((err,result) =>{			
+	db.collection('quotes').find({'id':n}).toArray( function (err,result){			
 		res.send(JSON.stringify(result));
 	})	
 })  
