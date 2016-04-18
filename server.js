@@ -16,7 +16,7 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
-MongoClient.connect('mongodb://dan:dan@ds019980.mlab.com:19980/quotesdb', (err, database) => {
+MongoClient.connect('mongodb://dan:dan@ds019980.mlab.com:19980/quotesdb', function (err, database){
 
 	if (err) return console.log(err)
 	db = database;
@@ -24,12 +24,12 @@ MongoClient.connect('mongodb://dan:dan@ds019980.mlab.com:19980/quotesdb', (err, 
   console.log('Node app is running on port', app.get('port'));
 })
 
-app.get('/', (req, res) => { 	
+app.get('/', function (req, res) { 	
 	res.render('pages/index');
 	console.log(req.body);
 })
   
-app.post('/quotes', (req, res) => {
+app.post('/quotes', function (req, res) {
 	console.log(req.body.id);  
 	var n = req.body.id;    
  	res.setHeader('Content-Type', 'application/json');  
