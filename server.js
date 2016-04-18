@@ -7,6 +7,7 @@ var path = require('path');
 var conn = require('connect');
 
 var db;
+app.set('port', (process.env.PORT || 5000));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname + '/public')));
 app.use(bodyParser.json());                                     // parse application/json
@@ -19,9 +20,8 @@ MongoClient.connect('mongodb://dan:dan@ds019980.mlab.com:19980/quotesdb', (err, 
 
 	if (err) return console.log(err)
 	db = database;
-	app.listen(3000, () => {
-    console.log('listening on 3000')
-  })
+	app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
 })
 
 app.get('/', (req, res) => { 	
