@@ -22,19 +22,19 @@ MongoClient.connect('mongodb://dan:dan@ds019980.mlab.com:19980/quotesdb', functi
 	db = database;
 	app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
-})
+	});
+});
 
 app.get('/', function (req, res) { 	
 	res.render('pages/index');
 	console.log(req.body);
-})
+});
   
 app.post('/quotes', function (req, res) {
 	console.log(req.body.id);  
 	var n = req.body.id;    
  	res.setHeader('Content-Type', 'application/json');  
-	db.collection('quotes').find({'id':n}).toArray( function (err,result){			
+	db.collection('quotes').find({'id':n}).toArray(function (err,result) {			
 		res.send(JSON.stringify(result));
-	})	
+	});	
 })  
-
